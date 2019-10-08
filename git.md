@@ -18,14 +18,14 @@ To apply this workflow, the `--rebase` flag must be used when pulling. To have t
     git config branch.autosetuprebase always # Force all new branches to automatically use rebase
     git config branch.*branch-name*.rebase true # Force existing branches to use rebase.
 
-
-
 ## Branches
 
 ### Permanent Branches
 _master_: the latest stable code. This is the branch on the production servers
 
 _develop_: primary working branch 
+
+- *when no _develop_ branch is present, treat _master_ as the parent branch*
 
 
 ### Working Locally with Feature Branches
@@ -103,6 +103,43 @@ To tag a tested release as deployable:
 	git tag -a RELEASE_NAME -m 'RELEASE NAME'
 	git push origin RELEASE_NAME
 
+## Commit Messages
+
+Following `CommitZen` structure, all commits should follow a structure as follows:
+
+```
+[feat|fix|docs|style|refactor|perf|test|chore](context): short commit message
+
+Additional information as part of the body.
+
+Issues Affected
+
+Additional Comments
+```
+
+All commit messages must be written in active tense:
+
+_GOOD_
+```
+feat(core): adds ability to create entities
+
+Addresses ISSUE-1, ISSUE-2
+```
+
+```
+docs(readme): fixes configuration parameters in docs
+```
+
+_NOT GOOD_
+```
+WIP
+```
+
+```
+Updating Documentation
+```
+
+When in doubt, ask yourself: *"what does this commit DO"*
 
 ### Hot Fixes
 If a hot fix is required, a hot fix branch is branched off of _master_.
