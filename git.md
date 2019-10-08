@@ -162,4 +162,4 @@ Note: Extreme caution must be taken when hotfixing _master_.
     git push origin develop
     
 ## No Nos!
-- Following this Git Flow, there should be no `Merge commits` as part of the history.  It creates an opaque history and it becomes difficult to read through the history of commits without having to go into individual code commits.
+- Following this Git Flow, there should be no `Merge commits` as part of the history.  It creates an opaque history and it becomes difficult to read through the history of commits without having to go into individual files and interpreting what happened.
